@@ -1,0 +1,12 @@
+name: a8-shiny-sambuxton
+title: a8-shiny-sambuxton
+username:
+account: sambuxton
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 346629
+bundleId: 1385562
+url: https://sambuxton.shinyapps.io/a8-shiny-sambuxton/
+when: 1526939177.72149
+asMultiple: FALSE
+asStatic: FALSE

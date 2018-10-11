@@ -1,0 +1,41 @@
+---
+title: "index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+source("civic-info.R")
+source("propublica.R")
+```
+####For my project, I analyzed those representing `r chosen_address` using the following:
+
+1. https://projects.propublica.org/api-docs/congress-api/ 
+2. https://developers.google.com/civic-information/
+
+It is a _very cool_ project that I had **so much** fun spending my weekend on.
+
+
+#####Here is some information on my local representatives
+```{r, echo = FALSE}
+kable(civic_data_frame)
+```
+
+## House of Representatives
+Looking at **all** the congressional representatives (In the House, not the Senate)
+
+This is how gender and party breakdown for those from the state of the address.
+```{r, echo=FALSE}
+
+party_plot
+
+gender_plot
+```
+
+
+##`r individual_name`
+Let's learn more about _`r individual_name`_. This person is `r age` years old,
+and you can find them on twitter at `r twitter_account`. Interestingly, of the last
+20 congressional votes, the representative was in accordance with the majority
+`r success_percentage` of the time.
+

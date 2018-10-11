@@ -1,0 +1,20 @@
+/* This is the style page which styles all text,
+   paragraphs, the image, and the options style */
+
+body {
+  font-family:Roboto;
+}
+
+p:hover {
+  background-color: yellow;
+}
+
+img:hover {
+  transform: scale(1.1, 1.1);
+  transition-duration: 1s;
+}
+
+#options {
+  font-style: oblique;
+}
+

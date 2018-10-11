@@ -1,0 +1,55 @@
+---
+title: "Shootings 2018"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+source("analysis.R")
+```
+### Summary Information
+In the United States in 2018, there were `r num_shootings` shootings. 
+These shootings killed a total of `r num_fatalities` people. The most impacted cities were: `r impact_statement`.
+In total, `r total_fatality_rate`% of people who were shot were killed.
+
+### State Information
+By looking at each state, there appears to be a correlation between number of attacks and overall fatality rate of 
+attacks. Additionally, Florida appears to be an outlier in the number of shootings, likely because it is the only state
+which is required to release all police records, indicating missing information from other states. Lastly, there
+is a correlation between both the number and deadliness of shootings and the latitudinal location of the state, indicating that 
+southern states are more likely to have more and deadlier shootings.
+
+```{r, echo = FALSE}
+kable(state_summary, col.names = c("State", "Fatality Rate", "Killed", "Injured", "Shootings"))
+```
+
+### Specific Incident
+In `r deadliest_attack$city` on `r deadliest_attack$date`, the deadliest attack of 2018 took place.
+`r deadliest_attack$num_killed` person(s) were killed while `r deadliest_attack$num_injured` person(s) were injured.
+This left a fatality rate of `r deadliest_attack$fatality_rate`%. For more information please refer to:
+https://en.wikipedia.org/wiki/Mass_shootings_in_the_United_States
+
+### Incident Map
+Below is a visual representation of the locations of each of the shootings with indications of the severity. These representations clarify the grographical relationship
+between the shooting locations and their severity. It may answer questions like: Are large shootings typically grouped together? Which states have more shootings than others?
+```{r, echo=FALSE}
+map_plot
+```
+
+### Severity Plot
+The main question most people want answered is "How does state policy affect the 
+severity of mass shootings?" Some believe that states where guns are more common
+will have less severe shootings while others believe the exact opposite.
+This plot analyzes the variance of the severity of the shootings in each state 
+to clarify _if_ there is a significant effect from state policy
+on shooting severity (indicated by a unique range in shootings) and _what_ that effect
+is (indicated by a higher or lower mean).
+```{r, fig_width = 1000, fig_length = 1000, echo=FALSE}
+severity_plot
+```
+
+
+
+
+
+

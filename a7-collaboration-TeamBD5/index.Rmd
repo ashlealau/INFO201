@@ -1,0 +1,53 @@
+---
+title: "Assignment 7"
+author: "Team BD5"
+date: "May 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(dplyr)
+source("./scripts/summary.R")
+source("./scripts/chart1.R")
+source("./scripts/chart2.R")
+source("./scripts/chart3.R")
+source("./scripts/chart4.R")
+```
+
+## Summary
+
+From looking at the introduction survey data from everyone in the
+course, we decided to showcase the class standings represented.
+From the responses, there seems to be 
+**`r intro_function(intro_survey)$freshman`** _freshman_,
+**`r intro_function(intro_survey)$sophomore`** _sophomores_,
+**`r intro_function(intro_survey)$junior`** _juniors_,
+**`r intro_function(intro_survey)$senior`** _seniors_, 
+and **`r intro_function(intro_survey)$blank`** person decided to leave it 
+_blank_.
+
+## Chart 1
+
+```{r echo=FALSE}
+chart_1(dataset_frame)
+```
+
+## Chart 2
+
+```{r echo=FALSE}
+chart_2(intro_survey)
+```
+
+## Chart 3
+
+```{r echo=FALSE}
+major_git_plot(intro_survey)
+```
+
+## Chart 4
+
+```{r echo=FALSE}
+
+```
